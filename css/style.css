@@ -1,0 +1,357 @@
+/* ======================================================
+   1. VARIÁVEIS DE DESIGN & TEMAS
+   ====================================================== */
+:root {
+    /* Tema Escuro (Padrão Barbearia) */
+    --bg-dark-custom: #0a0a0c;
+    --bg-section-custom: #141417;
+    --bg-card-custom: #1e1e24;
+    --border-color: rgba(212, 175, 55, 0.3);
+    
+    /* Tipografia de Alto Contraste */
+    --text-primary: #ffffff;
+    --text-secondary: #e2e2e8; /* Cinza bem claro para leitura fácil no escuro */
+    --text-muted-custom: #cccccc;
+    
+    /* Dourado Metálico Premium */
+    --gold-primary: #d4af37;
+    --gold-hover: #f3cf55;
+    --gold-gradient: linear-gradient(135deg, #f3cf55 0%, #d4af37 50%, #aa820a 100%);
+    --gold-shadow: rgba(212, 175, 55, 0.35);
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modo Claro (ativado pelo JavaScript) */
+body.light-mode {
+    --bg-dark-custom: #121215;
+    --bg-section-custom: #f4f5f7;
+    --bg-card-custom: #ffffff;
+    --border-color: #d0d0d5;
+    
+    --text-primary: #111115;
+    --text-secondary: #2c3036; /* Cinza bem escuro para leitura no fundo claro */
+    --text-muted-custom: #55555e;
+    
+    background-color: #ffffff;
+    color: var(--text-primary);
+}
+
+/* ======================================================
+   2. CORREÇÃO DEFINITIVA DE CONSTRASTE DO BOOTSTRAP
+   ====================================================== */
+/* Sobrescreve as classes padrão do Bootstrap que apagavam a letra */
+.text-secondary, 
+body .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.text-muted, 
+body .text-muted {
+    color: var(--text-muted-custom) !important;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-dark-custom);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 75px;
+}
+
+/* ======================================================
+   3. BOTÕES E ELEMENTOS DOURADOS
+   ====================================================== */
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.bg-gold {
+    background: var(--gold-gradient) !important;
+}
+
+/* Botão Dourado Principal */
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #000000 !important;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 4px 15px var(--gold-shadow);
+    transition: all var(--transition-smooth);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    color: #000000 !important;
+}
+
+/* Botão Outline */
+.btn-outline-gold {
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+    background: transparent;
+    font-weight: 600;
+    transition: all var(--transition-smooth);
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold-gradient);
+    color: #000000 !important;
+    border-color: transparent;
+    box-shadow: 0 4px 15px var(--gold-shadow);
+    transform: translateY(-2px);
+}
+
+/* ======================================================
+   4. NAVBAR
+   ====================================================== */
+#main-navbar {
+    background-color: rgba(10, 10, 12, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem !important;
+    color: #ffffff !important;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--gold-primary) !important;
+}
+
+/* ======================================================
+   5. HERO SECTION (Banner)
+   ====================================================== */
+#hero {
+    min-height: 90vh;
+    background: url('../img/banner-hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.80); /* Escurecido para dar legibilidade total ao texto branco */
+}
+
+.fw-extrabold { font-weight: 800; }
+.letter-spacing { letter-spacing: 3px; }
+.max-width-600 { max-width: 600px; }
+.max-width-700 { max-width: 700px; }
+
+.text-light-muted {
+    color: #ffffff !important;
+}
+
+.section-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gold-gradient);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ======================================================
+   6. SOBRE NÓS E CONTADORES
+   ====================================================== */
+.badge-experience {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    border-left: 4px solid var(--gold-primary);
+    backdrop-filter: blur(5px);
+}
+
+#counter-section h3 {
+    text-shadow: 0 0 10px var(--gold-shadow);
+}
+
+/* ======================================================
+   7. CARDS DE SERVIÇOS
+   ====================================================== */
+.bg-section-custom { 
+    background-color: var(--bg-section-custom) !important; 
+    transition: background-color var(--transition-smooth);
+}
+
+.bg-card-custom { 
+    background-color: var(--bg-card-custom) !important; 
+    border: 1px solid var(--border-color) !important;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.hover-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--gold-shadow) !important;
+}
+
+.hover-card .card-title {
+    color: #ffffff;
+}
+
+body.light-mode .hover-card .card-title {
+    color: #111115;
+}
+
+.hover-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hover-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.hover-card .badge {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+}
+
+/* ======================================================
+   8. DEPOIMENTOS (Carousel)
+   ====================================================== */
+#testimonialCarousel {
+    background-color: var(--bg-card-custom);
+    border: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--gold-primary);
+    background-size: 50%;
+}
+
+/* ======================================================
+   9. FORMULÁRIO DE CONTATO (Entradas e Rótulos Claros)
+   ====================================================== */
+#agendamento form {
+    border-radius: 16px;
+}
+
+.form-label {
+    color: #ffffff !important;
+}
+
+body.light-mode .form-label {
+    color: #111115 !important;
+}
+
+.form-control, 
+.form-select {
+    background-color: #121216 !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+}
+
+.form-control::placeholder {
+    color: #a0a0ab !important;
+    opacity: 1;
+}
+
+/* Ajustes no Modo Claro */
+body.light-mode .form-control,
+body.light-mode .form-select {
+    background-color: #ffffff !important;
+    border-color: #b0b0b8 !important;
+    color: #1a1a1e !important;
+}
+
+body.light-mode .form-control::placeholder {
+    color: #6c757d !important;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    background-color: #181820 !important;
+    border-color: var(--gold-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.25rem var(--gold-shadow) !important;
+}
+
+body.light-mode .form-control:focus,
+body.light-mode .form-select:focus {
+    background-color: #ffffff !important;
+    color: #1a1a1e !important;
+}
+
+.form-control.is-valid, 
+.form-select.is-valid {
+    border-color: #198754 !important;
+}
+
+.form-control.is-invalid, 
+.form-select.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+/* ======================================================
+   10. RODAPÉ
+   ====================================================== */
+footer {
+    background-color: #050507 !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+footer a {
+    transition: transform var(--transition-fast), color var(--transition-fast);
+    display: inline-block;
+}
+
+footer a:hover {
+    color: var(--gold-hover) !important;
+    transform: translateY(-3px);
+}

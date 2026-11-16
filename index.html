@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia DuarteSoura | Estilo & Tradição</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Style CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="70">
+
+    <!-- Navbar Fixa -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <i class="fa-solid fa-scissors text-gold me-2 fs-3"></i>
+                <span class="fw-bold tracking-wider text-uppercase">Duarte<span class="text-gold">Soura</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Avaliações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#agendamento">Agendar</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <!-- Recurso JS 1: Botão Dark/Light Mode -->
+                        <button id="theme-toggle" class="btn btn-outline-gold btn-sm rounded-circle" title="Alternar Modo de Cor">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center justify-content-center text-center text-white bg-dark position-relative">
+        <div class="overlay"></div>
+        <div class="container position-relative z-1 py-5">
+            <span class="text-gold text-uppercase fw-bold letter-spacing mb-2 d-block">Tradição & Estilo Moderno</span>
+            <h1 class="display-2 fw-extrabold mb-3 text-uppercase">Barbearia DuarteSoura</h1>
+            <p class="lead mb-4 max-width-600 mx-auto text-light-muted">Mais que um corte de cabelo: uma experiência completa de cuidado masculino com precisão e técnica.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#agendamento" class="btn btn-gold btn-lg fw-bold px-4 text-uppercase">Agendar Horário</a>
+                <a href="#servicos" class="btn btn-outline-light btn-lg px-4 text-uppercase">Ver Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="img/banner-hero.jpg" alt="Interior da Barbearia DuarteSoura" class="img-fluid rounded-4 shadow-lg">
+                        <div class="badge-experience bg-gold text-dark p-3 rounded-3 shadow d-none d-sm-block">
+                            <span class="h3 fw-bold d-block mb-0">1 Ano</span>
+                            <small class="fw-semibold">De excelência no mercado</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-3">A DuarteSoura</h2>
+                    <p class="text-secondary">Fundada com o propósito de resgatar a essência das barbearias clássicas combinada às técnicas mais modernas do visagismo masculino.</p>
+                    <p class="text-secondary">Nossa equipe conta com profissionais altamente qualificados para oferecer um ambiente confortável, atendimento pontual e resultados impecáveis no seu visual.</p>
+                    
+                    <!-- Recurso JS 2: Contadores Numéricos Dinâmicos -->
+                    <div class="row text-center mt-4 gy-3" id="counter-section">
+                        <div class="col-4">
+                            <h3 class="display-6 fw-bold text-gold counter" data-target="3500">0</h3>
+                            <p class="small text-muted text-uppercase fw-bold">Cortes Realizados</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="display-6 fw-bold text-gold counter" data-target="2000">0</h3>
+                            <p class="small text-muted text-uppercase fw-bold">Barbas Feitas</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="display-6 fw-bold text-gold counter" data-target="98">0</h3>
+                            <small class="d-inline text-gold fw-bold">%</small>
+                            <p class="small text-muted text-uppercase fw-bold">Clientes Satisfeitos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços (Cards Bootstrap) -->
+    <section id="servicos" class="py-5 bg-section-custom">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-gold text-uppercase fw-bold">Nossas Especialidades</span>
+                <h2 class="section-title">Serviços & Preços</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card bg-card-custom">
+                        <img src="img/tesoura.jpg" class="card-img-top" alt="Corte de Cabelo">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold mb-0">Corte Tesoura / Máquina</h5>
+                                    <span class="badge bg-gold text-dark fs-6">R$ 25</span>
+                                </div>
+                                <p class="card-text text-secondary">Corte moderno ou clássico com alinhamento de pezinho, lavagem e finalização com pomada premium.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card bg-card-custom">
+                        <img src="img/barboterapia.jpg" class="card-img-top" alt="Barboterapia">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold mb-0">Barboterapia</h5>
+                                    <span class="badge bg-gold text-dark fs-6">R$ 20</span>
+                                </div>
+                                <p class="card-text text-secondary">Modelagem completa com toalha quente, óleos essenciais e hidratação para evitar irritação na pele.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card bg-card-custom">
+                        <img src="img/combo.jpg" class="card-img-top" alt="Combo DuarteSoura">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold mb-0">Combo DuarteSoura</h5>
+                                    <span class="badge bg-gold text-dark fs-6">R$ 47</span>
+                                </div>
+                                <p class="card-text text-secondary">A experiência completa: Corte de cabelo + Barboterapia + Sobrancelha com desconto especial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos / Avaliações (Carousel Bootstrap) -->
+    <section id="depoimentos" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-gold text-uppercase fw-bold">Feedback dos Clientes</span>
+                <h2 class="section-title">Quem Atende, Recomenda</h2>
+            </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active text-center px-4">
+                        <div class="text-warning mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="lead italic text-secondary max-width-700 mx-auto">"Excelente atendimento! Fui atendido no horário pontual e o degradê ficou impecável. A barboterapia com toalha quente vale cada centavo."</p>
+                        <h6 class="fw-bold mb-0 mt-3 text-gold">Lucas Andrade</h6>
+                        <small class="text-secondary">Cliente Frequente</small>
+                    </div>
+                    <div class="carousel-item text-center px-4">
+                        <div class="text-warning mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="lead italic text-secondary max-width-700 mx-auto">"O ambiente da DuarteSoura é diferenciado. Cerveja gelada, boa conversa e profissionais que entendem exatamente o que você quer."</p>
+                        <h6 class="fw-bold mb-0 mt-3 text-gold">Gabriel Vasconcelos</h6>
+                        <small class="text-muted">Cliente há 3 anos</small>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento / Contato (Formulário Integrado ao Formspree) -->
+    <section id="agendamento" class="py-5 bg-section-custom">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <span class="text-gold text-uppercase fw-bold">Garanta seu Horário</span>
+                        <h2 class="section-title">Pré-Agendamento & Contato</h2>
+                        <p class="text-secondary">Preencha o formulário abaixo e nossa equipe confirmará seu atendimento!</p>
+                    </div>
+
+                    <!-- Alertas de Feedback em JS -->
+                    <div id="form-alert" class="alert d-none" role="alert"></div>
+
+                    <!--
+                      COMO FAZER O ENVIO FUNCIONAR:
+                      Substitua 'SEU_ENDPOINT_HERE' no atributo action abaixo pelo seu ID do Formspree (https://formspree.io).
+                      Exemplo: action="https://formspree.io/f/xknkywql"
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/SEU_ENDPOINT_HERE" method="POST" novalidate class="card p-4 shadow border-0 bg-card-custom">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label fw-bold">Nome Completo *</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                                <div class="invalid-feedback">Por favor, informe seu nome (mínimo 3 caracteres).</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-bold">E-mail *</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com">
+                                <div class="invalid-feedback">Por favor, informe um e-mail válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label fw-bold">WhatsApp / Telefone *</label>
+                                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                                <div class="invalid-feedback">Informe um telefone com DDD válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="servico" class="form-label fw-bold">Serviço Desejado *</label>
+                                <select class="form-select" id="servico" name="servico">
+                                    <option value="">Selecione uma opção...</option>
+                                    <option value="Corte">Corte de Cabelo</option>
+                                    <option value="Barba">Barboterapia</option>
+                                    <option value="Combo">Combo DuarteSoura (Corte + Barba)</option>
+                                    <option value="Outros">Outros / Dúvidas</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor, escolha o serviço desejado.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensagem" class="form-label fw-bold">Preferência de Data/Horário ou Observação *</label>
+                                <textarea class="form-control" id="mensagem" name="mensagem" rows="3" placeholder="Ex: Gostaria de agendar para sexta-feira à tarde..."></textarea>
+                                <div class="invalid-feedback">Sua mensagem precisa ter pelo menos 10 caracteres.</div>
+                            </div>
+                            <div class="col-12 text-end mt-4">
+                                <button type="submit" id="submitBtn" class="btn btn-gold btn-lg fw-bold w-100 text-uppercase">
+                                    <span>Solicitar Agendamento</span>
+                                    <i class="fa-solid fa-calendar-check ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark-custom text-white py-4 border-top border-secondary">
+        <div class="container text-center text-md-start">
+            <div class="row gy-3 align-items-center">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-1"><i class="fa-solid fa-scissors text-gold me-2"></i>Duarte<span class="text-gold">Soura</span></h5>
+                    <p class="small text-muted mb-0">&copy; 2026 Barbearia DuarteSoura. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-gold me-3 fs-5"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-gold me-3 fs-5"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-gold fs-5"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap e JS Próprio -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
